@@ -9,7 +9,7 @@ INSTALL_PATH="/usr/local/bin/$BINARY_NAME"
 
 if  command -v g++ >/dev/null 2>&1; then
     echo "Initializing Package"
-    g++ main.cpp lib/cd/cd.cpp lib/input/inputParser.cpp lib/runner/runner.cpp -o darbshell
+    g++ -std=c++23 main.cpp lib/cd/cd.cpp lib/input/inputParser.cpp lib/runner/runner.cpp -o darbshell
 else 
     echo "Error: g++ compiler isn't installed"
     exit 1

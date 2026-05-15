@@ -13,7 +13,16 @@ vector<string> input_parser(string input){
     string word;
 
     while (ss >> word) {
-        parsedInput.push_back(word);
-    }
+        if(word.contains('\'') || word.contains('\"')){
+           
+                erase(word,'\"');
+            
+                erase(word,'\'');
+                parsedInput.push_back(word);
+               
+        } else {
+            parsedInput.push_back(word);    
+        }
+        }
     return parsedInput;
 }
