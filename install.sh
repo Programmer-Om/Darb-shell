@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BINARY_FILE="darbshell"
+BINARY_FILE="darb"
 INSTALL_PATH="/usr/local/bin/$BINARY_NAME"
 
     echo "       ----------------------"
@@ -9,7 +9,7 @@ INSTALL_PATH="/usr/local/bin/$BINARY_NAME"
 
 if  command -v g++ >/dev/null 2>&1; then
     echo "Initializing Package"
-    g++ -std=c++23 main.cpp lib/cd/cd.cpp lib/input/inputParser.cpp lib/runner/runner.cpp -o darbshell
+    g++ -std=c++23 main.cpp lib/shell-commands/shell_commands.cpp lib/input/inputParser.cpp lib/runner/runner.cpp -o ${BINARY_FILE}
 else 
     echo "Error: g++ compiler isn't installed"
     exit 1

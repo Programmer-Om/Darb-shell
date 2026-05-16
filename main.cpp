@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <filesystem>
-#include "lib/cd/cd.hpp"
+#include "lib/input/inputParser.hpp"
 #include "lib/runner/runner.hpp"
 
 
@@ -25,16 +25,19 @@ using namespace std;
 
 			cout<<"\033[30;46m\u2192["<<filesystem::current_path().string()<<"]\033[36;40m ";
 			string input;
-			getline(cin,input);
-			
-			vector<string> command = input_parser(input);
+
+			Input_handler input_handler;
+			vector<string> command = input_handler.input_getter("");
+
+
 
 			if(command.empty()){
 				cout<<endl;
-			}else if (command[0] == "cd")
-			{
+			}else if (command[0] == "cd"){
 				run_shell_command(command);
-			}else if(input=="exit"){
+			}else if (command[0] == "darb"){
+				run_shell_command(command);
+			}else if(command[0]=="exit"){
 				return 0;
 			}else{
 				run_command(command);
