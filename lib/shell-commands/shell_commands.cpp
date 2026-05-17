@@ -29,7 +29,7 @@ void Change_Directory(string path) {
 
 void Darb_shell(string flag){
     if (flag == "-v" || flag == "--version"){
-        cout<<"Darb Shell version 0.2.0-alpha.0.2"<<endl;
+        cout<<"Darb Shell version 0.2.0-alpha.0.3"<<endl;
     }else if (flag == "-h" || flag == "--help"){
         cout<< " -h  OR  --help : Displays this message"<<endl;
         cout<< " -v  OR  --version : Displays the current version of Darb Shell"<<endl;

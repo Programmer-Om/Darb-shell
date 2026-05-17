@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BINARY_FILE="darb"
-INSTALL_PATH="/usr/local/bin/$BINARY_NAME"
+INSTALL_PATH="/usr/local/bin/$BINARY_FILE"
 
     echo "       ----------------------"
     echo "      | Darb Shell Installer |"
@@ -24,7 +24,7 @@ echo "done"
 
 echo "Registering Shell in /etc/shells"
 
-if ! grep -q "$INSTALL_PATH" /etc/shells; then
+if ! grep -Fxq "$INSTALL_PATH" /etc/shells; then
     echo "$INSTALL_PATH" | sudo tee -a /etc/shells > /dev/null
 else
     echo "Shell already registered in /etc/shells"
